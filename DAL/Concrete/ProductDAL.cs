@@ -64,7 +64,7 @@ namespace DAL.Concrete
             }
         }
 
-        public void Delete(int id)
+        public long Delete(long id)
         {
             try
             {
@@ -78,10 +78,12 @@ namespace DAL.Concrete
                     comm.ExecuteNonQuery();
                     conn.Close();
                 }
+                return id;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                return -1;
             }
         }
 

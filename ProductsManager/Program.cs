@@ -136,7 +136,7 @@ namespace ProductsManager
                 Console.Write("\nPlease enter your password: ");
                 currentUser.Password = Console.ReadLine().ToString();
             
-                currentUser = userDal_.LogIn(currentUser);
+                //currentUser = userDal_.LogIn(currentUser);
                 Console.WriteLine("user: " + isLogIn.ToString());
             }
             return isLogIn;

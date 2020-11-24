@@ -139,7 +139,7 @@ namespace DAL.Concrete
         }
 
 
-        public UserDTO LogIn(UserDTO user)
+        public uint LogIn(UserDTO user)
         {
             using (SqlConnection conn = new SqlConnection(this.connectionString))
             using (SqlCommand comm = conn.CreateCommand())
@@ -155,26 +155,26 @@ namespace DAL.Concrete
                     {
                         if (reader["Login"].ToString() == user.Login && reader["Password"].ToString() == user.Password)
                         {
-                                UserDTO userAdd = new UserDTO();
+                            UserDTO userAdd = new UserDTO();
 
-                                userAdd.Id = (long)reader["Id"];
-                                userAdd.FullName = reader["FullName"].ToString();
-                                userAdd.Gender = (bool)reader["Gender"];
-                                userAdd.Login = reader["Login"].ToString();
-                                userAdd.Password = reader["Password"].ToString();
-                                users.Add(userAdd);
+                            userAdd.Id = (long)reader["Id"];
+                            userAdd.FullName = reader["FullName"].ToString();
+                            userAdd.Gender = (bool)reader["Gender"];
+                            userAdd.Login = reader["Login"].ToString();
+                            userAdd.Password = reader["Password"].ToString();
+                            users.Add(userAdd);
 
-                                conn.Close();
-                                return userAdd;
+                            conn.Close();
+                            return 2;
                         }
-                        return null;
+                        return 2;
                     }
-                    return null;
+                    return 0;
                 }
                 catch (SqlException e)
                 {
                     Console.WriteLine(e.Message);
-                    return null;
+                    return 0;
                 }
 
             }

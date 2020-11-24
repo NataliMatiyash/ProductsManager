@@ -1,19 +1,23 @@
 ﻿using BusinessLogic.Interfaces;
 using DAL.Interfaces;
+using DTO;
 
 namespace BusinessLogic.Concrete
 {
-    public class AuthManager: IAuthManager
+    public class AuthManager: UserManager
     {
-        private readonly IUserDAL _userDal;
-        public AuthManager(IUserDAL userDal)
+        public AuthManager(UserDTO user) : base(user)
         {
-            _userDal = userDal;
+            addRemovePermitions = false;
         }
-        public bool Login(string username, string password)
+
+        public override bool AddProduct(string title_, decimal price, string comment_)
         {
-            //return _userDal.Login(username, password);
             return false;
+        }
+        public override long DeleteProduct(long id)
+        {
+            return -1;
         }
     }
 }

@@ -14,6 +14,6 @@ namespace DAL.Interfaces
         List<ProductDTO> Find(string productName);
         ProductDTO Add(ProductDTO product);
         void AddResponceId(string productId, string responceId);
-        void Delete(int id);
+        long Delete(long id);
     }
 }
