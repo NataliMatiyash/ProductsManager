@@ -1,0 +1,85 @@
+﻿<Window x:Class="ProductsManagerWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="380" 
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="0" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Red" Offset="0.4" />
+                        <GradientStop Color="Green" Offset="1.2" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+
+            <StackPanel VerticalAlignment="Center" Grid.Row="0">
+
+                <TextBlock Text="Магазин одягу" 
+                           FontWeight="Bold" 
+                           FontSize="40" 
+                           FontFamily="Times New Roman"
+                           HorizontalAlignment="Center"
+                           Foreground="Black"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBox
+                        Name="txt_Login" 
+                           FontWeight="Light" 
+                           FontSize="20"
+                           Foreground="Black" 
+                           Background="Transparent"
+                           Text="1"
+                           Opacity="0.5"
+                           Width="240"
+                           Height="25"
+                           Margin="70, 0, 0, 0"
+                        />
+
+                </StackPanel>
+                <Border Width="235" Height="2" Background="White" Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0, 20, 0, 0">
+                    <TextBox
+                        Name="txt_Password" 
+                           FontWeight="Light" 
+                        Text="1"
+                           FontSize="20"
+                           Foreground="Black" 
+                           Background="Transparent"
+                           Opacity="0.5"
+                           Width="240"
+                           Height="25"
+                           Margin="70, 0, 0, 0"
+                          />
+
+                </StackPanel>
+                <Border Width="235" Height="2" Background="White" Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,50,0,0" HorizontalAlignment="Center">
+                    <Button   Width="100" FontSize="16" FontWeight="UltraLight"  Foreground="Black" 
+                          BorderBrush="AliceBlue" Background="Transparent" Height="40" Content="Скасувати" Margin="0,0,50,0" Name="btnCancel" Click="Cancel_Click"></Button>
+                    <Button Width="100" FontSize="16" FontWeight="UltraLight"  Foreground="Black" 
+                         BorderBrush="AliceBlue"  Background="Transparent" Height="40" Content="Увійти" Name="btnLogin" Click="Login_Click"></Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
